@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's the weather like?</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<!--    <section class="hero bg-primary text-white py-5">-->
+<!--        <div class="container text-center">-->
+<!--            <h1 class="display-4">-->
+<!--                What to wear in this weather? 🤔-->
+<!--            </h1>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--    <section class="py-5">-->
+<!--        <div class="container">-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-md-6">-->
+<!--                    <form method="POST">-->
+<!--&lt;!&ndash;                        {% csrf_token %}&ndash;&gt;-->
+<!--                        <div class="input-group">-->
+<!--                            <input class="form-control" type="text" placeholder="City Name" name="city">-->
+<!--                            <div class="input-group-append">-->
+<!--                                <button class="btn btn-info" type="submit">-->
+<!--                                    Check Weather-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+
+
+    <section class="vh-100" style="background-color: white;">
+  <div class="container py-5 h-100">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+
+        <div class="card" style="color: #4B515D; border-radius: 35px;">
+          <div class="card-body p-4">
+
+            <div class="d-flex">
+              <h6 class="flex-grow-1">{{weather_data.city_name}}</h6>
+              <h6>15:07</h6>
+            </div>
+
+            <div class="d-flex flex-column text-center mt-5 mb-4">
+              <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> {{weather_data.temperature}}°C </h6>
+              <span class="small" style="color: #868B94">{{weather_data.weather_main}}</span>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <div class="flex-grow-1" style="font-size: 1rem;">
+                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.wind_speed}} km/h
+                  </span></div>
+                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.humidity}}% </span>
+                </div>
+<!--                <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 0.2h </span>-->
+<!--                </div>-->
+              </div>
+              <div>
+                <img src="https://openweathermap.org/img/wn/{{weather_data.weather_icon}}@2x.png"
+                  width="100px">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!--<section class="py-6" style="background-color: #f8f9fa;">-->
+<!--    <div class="container">-->
+<!--        <div class="row" style="margin-left: 25%;">-->
+<!--            <div class="col-md-4 col-lg-2">-->
+<!--                <h5>Last searched:</h5>-->
+<!--            </div>-->
+<!--            <div class="col-md-3">-->
+<!--                &lt;!&ndash; Weather Card 1 &ndash;&gt;-->
+<!--                <div class="card" style="color: #4B515D; border-radius: 0; border: none; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">-->
+<!--    <div class="card-body p-2" style="flex-grow: 1;">-->
+<!--        <h6 class="mb-0">Warsaw</h6>-->
+<!--        <h6 class="mb-0">15:07</h6>-->
+<!--        <div class="d-flex justify-content-center align-items-center mt-3">-->
+<!--            <h6 class="mb-0" style="font-size: 1.5rem; color: #1C2331;">13°C</h6>-->
+<!--            <span class="small" style="color: #868B94; margin-left: 5px;">Stormy</span>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+<!--    <div class="d-flex align-items-center p-2" style="background-color: #f8f9fa;">-->
+<!--        <div class="flex-grow-1" style="font-size: 0.8rem;">-->
+<!--            <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1">40 km/h</span></div>-->
+<!--            <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1">84%</span></div>-->
+<!--            <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1">0.2h</span></div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp" width="27px" height="27px">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--            </div>-->
+<!--            <div class="col-md-3">-->
+<!--                &lt;!&ndash; Weather Card 2 &ndash;&gt;-->
+<!--               <div class="card" style="color: #4B515D; border-radius: 0; border: none; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">-->
+<!--    <div class="card-body p-2" style="flex-grow: 1;">-->
+<!--        <h6 class="mb-0">Warsaw</h6>-->
+<!--        <h6 class="mb-0">15:07</h6>-->
+<!--        <div class="d-flex justify-content-center align-items-center mt-3">-->
+<!--            <h6 class="mb-0" style="font-size: 1.5rem; color: #1C2331;">13°C</h6>-->
+<!--            <span class="small" style="color: #868B94; margin-left: 5px;">Stormy</span>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+<!--          </div>-->
+<!--        </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-3">-->
+<!--                &lt;!&ndash; Weather Card 3 &ndash;&gt;-->
+<!--                &lt;!&ndash; Copy the weather card content here and adjust it &ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
