@@ -15,7 +15,7 @@ DEFAULT_APPS = [
 
 CUSTOM_APPS = [
     "apps.weather",
-    "apps.core"
+    "apps.core",
 ]
 
 THIRD_PARTY_APPS = []
