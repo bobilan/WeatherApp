@@ -5,7 +5,7 @@ base-install:
 	pip install -r requirements/base.txt
 
 dev-install:
-	pip install base-r requirements/dev.txt
+	pip install -r requirements/dev.txt
 
 dev-migrate:
 	python manage.py migrate --settings=config.settings.dev
@@ -22,5 +22,8 @@ dev-sqlmigrate:
 dev-createsuperuser:
 	python manage.py createsuperuser --settings=config.settings.dev
 
+dev-shell:
+	python manage.py shell --settings=config.settings.dev
 
-
+dev-rollback:
+	python manage.py migrate $(app_name) $(migration_file) --settings=config.settings.dev

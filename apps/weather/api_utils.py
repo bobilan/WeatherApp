@@ -1,7 +1,15 @@
 import requests
 import environ
 import openai
+from django.utils import timezone
+
+from apps.weather.models import WeatherData, ClothingRecommendations
 from config.settings.base import BASE_DIR
+
+from typing import Optional, Dict
+
+
+TOKENS_TO_EXTRACT = {"clothing": "Clothing: ", "shoes": "Shoes: ", "accessories": "Accessories: "}
 
 env = environ.Env()
 env.read_env(str(BASE_DIR / ".env"))
@@ -51,12 +59,75 @@ def get_clothing_recommendation(weather_data):
             prompt=prompt,
             max_tokens=150
         )
-        split_text = response.choices[0].text.split("\n")
+        # split_text = response.choices[0].text.split("\n")
 
-        return {"clothing": split_text[1][10:],
-                "shoes": split_text[2][7:],
-                "accessories": split_text[3][13:]}
+        return parse_clothing_suggestions(response.choices[0].text)
+
+        # return {"clothing": split_text[1][10:],
+        #         "shoes": split_text[2][7:],
+        #         "accessories": split_text[3][13:]}
 
     except Exception as e:
         print(f"Error generating clothing recommendation: {e}")
         return None
+
+
+def extract_suggestion(token: str, suggestion_text: str) -> Optional[str]:
+    if token in suggestion_text:
+        return suggestion_text.replace(token, "")
+
+
+def parse_clothing_suggestions(closing_suggestions: str) -> Optional[Dict[str, str]]:
+    extracted_suggestions = {}
+    for token_name, token_value in TOKENS_TO_EXTRACT.items():
+        for suggestion_text in closing_suggestions.split("\n"):
+            extracted_suggestion = extract_suggestion(
+                token=token_value, suggestion_text=suggestion_text
+            )
+            if extracted_suggestion:
+                extracted_suggestions[token_name] = extracted_suggestion
+    return extracted_suggestions
+
+
+def save_weather_data(api_response) -> WeatherData:
+    weather_info = api_response
+
+    # Create a new WeatherData instance
+    new_weather_data = WeatherData(
+        city_name=weather_info['city_name'],
+        weather_main=weather_info['weather_main'],
+        temperature=weather_info['temperature'],
+        humidity=weather_info['humidity'],
+        wind_speed=weather_info['wind_speed'],
+        weather_icon=weather_info['weather_icon'],
+    )
+
+    new_weather_data.created_at = timezone.now()
+    new_weather_data.modified_at = timezone.now()
+
+    # Save
+    new_weather_data.save()
+
+    return new_weather_data
+
+
+def save_clothing_recommendations(weather_data_instance: WeatherData, description_text: dict) -> None:
+
+    # Create a ClothingRecommendations instance.
+    weather_description = ClothingRecommendations(weather_data=weather_data_instance, description=description_text)
+
+    weather_description.save()
+
+
+###
+API_response = call_weather_api("Munich")
+
+clothes = get_clothing_recommendation(API_response)
+
+new_weather_instance = save_weather_data(API_response)
+
+save_clothing_recommendations(new_weather_instance, clothes)
+
+# TODO: apply save to DB login in views.py
+# TODO: admin panel view
+# TODO: manipulations with DB, joins, other stuff
