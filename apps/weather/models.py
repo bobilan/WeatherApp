@@ -14,6 +14,9 @@ class WeatherData(CreatedModifiedAtDateTimeBase):
     wind_speed = models.DecimalField(max_digits=5, decimal_places=2)
     weather_icon = models.CharField(max_length=10)
 
+    class Meta:
+        verbose_name_plural = "Data"
+
     def __str__(self):
         return f"Weather in {self.city_name} - {self.created_at}"
 
@@ -29,6 +32,9 @@ class WeatherDescription(models.Model):
 class ClothingRecommendations(models.Model):
     weather_data = models.ForeignKey('WeatherData', on_delete=models.CASCADE)
     description = models.JSONField()
+
+    class Meta:
+        verbose_name_plural = "Clothing recommendations"
 
     def __str__(self):
         return f"Recommendations for {self.weather_data.city_name} - {self.weather_data.description}"
