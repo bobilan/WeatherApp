@@ -15,7 +15,7 @@ class WeatherData(CreatedModifiedAtDateTimeBase):
     weather_icon = models.CharField(max_length=10)
 
     class Meta:
-        verbose_name_plural = "Data"
+        verbose_name_plural = "Weather Data"
 
     def __str__(self):
         return f"Weather in {self.city_name} - {self.created_at}"
@@ -37,5 +37,5 @@ class ClothingRecommendations(models.Model):
         verbose_name_plural = "Clothing recommendations"
 
     def __str__(self):
-        return f"Recommendations for {self.weather_data.city_name} - {self.weather_data.description}"
+        return f"Recommendations for {self.weather_data.city_name} - {self.description}"
 

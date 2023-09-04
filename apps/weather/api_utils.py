@@ -59,13 +59,8 @@ def get_clothing_recommendation(weather_data):
             prompt=prompt,
             max_tokens=150
         )
-        # split_text = response.choices[0].text.split("\n")
 
         return parse_clothing_suggestions(response.choices[0].text)
-
-        # return {"clothing": split_text[1][10:],
-        #         "shoes": split_text[2][7:],
-        #         "accessories": split_text[3][13:]}
 
     except Exception as e:
         print(f"Error generating clothing recommendation: {e}")
@@ -119,15 +114,13 @@ def save_clothing_recommendations(weather_data_instance: WeatherData, descriptio
     weather_description.save()
 
 
-###
-API_response = call_weather_api("Munich")
+# API_response = call_weather_api("Munich")
+#
+# clothes = get_clothing_recommendation(API_response)
+#
+# new_weather_instance = save_weather_data(API_response)
+#
+# save_clothing_recommendations(new_weather_instance, clothes)
 
-clothes = get_clothing_recommendation(API_response)
 
-new_weather_instance = save_weather_data(API_response)
-
-save_clothing_recommendations(new_weather_instance, clothes)
-
-# TODO: apply save to DB login in views.py
-# TODO: admin panel view
 # TODO: manipulations with DB, joins, other stuff
