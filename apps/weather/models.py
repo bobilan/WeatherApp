@@ -17,8 +17,11 @@ class WeatherData(CreatedModifiedAtDateTimeBase):
     class Meta:
         verbose_name_plural = "Weather Data"
 
+    def formatted_city_name(self):
+        return f"Weather in {self.city_name}"
+
     def __str__(self):
-        return f"Weather in {self.city_name} - {self.created_at}"
+        return self.formatted_city_name()
 
 
 class WeatherDescription(models.Model):
@@ -26,7 +29,7 @@ class WeatherDescription(models.Model):
     description = models.CharField(max_length=200)
 
     def __str__(self):
-        return f"Description for {self.weather_data.city_name} - {self.weather_data.created_at}"
+        return f"Description for {self.weather_data.city_name} - {self.description}"
 
 
 class ClothingRecommendations(models.Model):
