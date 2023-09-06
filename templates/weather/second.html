@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>What's the weather like?</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load custom_filters %}
 </head>
 <body>
 
@@ -58,18 +59,18 @@
           <div class="card-body p-4">
             <!-- Left Card Body -->
             <div class="d-flex">
-              <h6 class="flex-grow-1">{{weather_data.city_name}}</h6>
+              <h6 class="flex-grow-1">{{weather_data.city_name|uppercase}}</h6>
               <h6>{{weather_data.country}}</h6>
             </div>
 
             <div class="d-flex flex-column text-center mt-5 mb-4">
-              <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> {{weather_data.temperature}}°C </h6>
+              <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> {{weather_data.temperature|floatformat:'0'}}°C </h6>
               <span class="small" style="color: #868B94">{{weather_data.weather_main}}</span>
             </div>
 
             <div class="d-flex align-items-center">
               <div class="flex-grow-1" style="font-size: 1rem;">
-                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.wind_speed}} km/h
+                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.wind_speed|floatformat:'1'}} km/h
                   </span></div>
                 <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.humidity}}% </span>
                 </div>

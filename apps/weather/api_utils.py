@@ -34,7 +34,7 @@ def call_weather_api(city):
             "weather_main": weather_details['main'],
             "temperature": round(main_details['temp']),
             "humidity": main_details['humidity'],
-            "wind_speed": round(wind_details['speed'], 1),
+            "wind_speed": wind_details['speed'],
             "weather_icon": weather_details['icon'],
             "country": sys_details["country"]
         }
