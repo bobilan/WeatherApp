@@ -112,15 +112,3 @@ def save_clothing_recommendations(weather_data_instance: WeatherData, descriptio
     weather_description = ClothingRecommendations(weather_data=weather_data_instance, description=description_text)
 
     weather_description.save()
-
-
-# API_response = call_weather_api("Munich")
-#
-# clothes = get_clothing_recommendation(API_response)
-#
-# new_weather_instance = save_weather_data(API_response)
-#
-# save_clothing_recommendations(new_weather_instance, clothes)
-
-
-# TODO: manipulations with DB, joins, other stuff
