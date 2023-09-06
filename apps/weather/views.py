@@ -25,7 +25,7 @@ def weather_view(request):
             return redirect('second_view')
 
         else:
-            # Finish with the logic
+            # Complete the logic
             print("Failed to fetch data.")
 
     return render(request, 'weather/index.html')
@@ -38,8 +38,8 @@ def second_view(request):
     clothing_data = request.session.get('clothing_data', "")
 
     if not weather_data:
-        # Handle the case where weather_data is not found in the session
+        # If data not found
         messages.error(request, 'Weather data not found in session.')
-        return redirect('weather/index.html')  # Redirect to another view or page
+        return redirect('weather/index.html')  # Redirect to index
 
     return render(request, 'weather/second.html', {'weather_data': weather_data, "clothing_data": clothing_data})

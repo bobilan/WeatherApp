@@ -23,7 +23,7 @@ def call_weather_api(city):
         response.raise_for_status()  # Raise an exception for HTTP errors
         weather_data = response.json()
 
-        # Extract weather data in a more readable way
+        # Extract weather data
         weather_details = weather_data['weather'][0]
         main_details = weather_data['main']
         wind_details = weather_data['wind']
