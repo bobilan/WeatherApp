@@ -1,0 +1,54 @@
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.025766 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.026899 >> GET | 127.0.0.1:8000/
+[info] POST | 127.0.0.1:8000/ | application/x-www-form-urlencoded | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:01.661213 >> POST | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:01.661491 >> POST | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/second/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.017434 >> GET | 127.0.0.1:8000/second/
+[info]  EXECUTION TIME 2  0:00:00.017619 >> GET | 127.0.0.1:8000/second/
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.002185 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.002880 >> GET | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.018116 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.018452 >> GET | 127.0.0.1:8000/
+[info] POST | 127.0.0.1:8000/ | application/x-www-form-urlencoded | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:01.739557 >> POST | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:01.739862 >> POST | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/second/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.021843 >> GET | 127.0.0.1:8000/second/
+[info]  EXECUTION TIME 2  0:00:00.022503 >> GET | 127.0.0.1:8000/second/
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.011959 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.012233 >> GET | 127.0.0.1:8000/
+[info] POST | 127.0.0.1:8000/ | application/x-www-form-urlencoded | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 <QueryDict: {'csrfmiddlewaretoken': ['Gwdk9LMvawbULerFqm6QNSsMJKu4VibftehOiRj7CM7ZIyhQSjwTWjJpp81hC8UH'], 'search_bar': ['Berlin']}>
+[info]  EXECUTION TIME 0:00:01.475462 >> POST | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:01.475841 >> POST | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/second/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.015627 >> GET | 127.0.0.1:8000/second/
+[info]  EXECUTION TIME 2  0:00:00.015859 >> GET | 127.0.0.1:8000/second/
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.011701 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.012030 >> GET | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.012487 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.012912 >> GET | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.001943 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.002231 >> GET | 127.0.0.1:8000/
+[info] POST | 127.0.0.1:8000/ | application/x-www-form-urlencoded | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Jakarta
+[info]  EXECUTION TIME 0:00:01.380660 >> POST | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:01.380949 >> POST | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/second/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.019617 >> GET | 127.0.0.1:8000/second/
+[info]  EXECUTION TIME 2  0:00:00.020024 >> GET | 127.0.0.1:8000/second/
+[info] GET | 127.0.0.1:8000/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.013940 >> GET | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:00.014346 >> GET | 127.0.0.1:8000/
+[info] POST | 127.0.0.1:8000/ | application/x-www-form-urlencoded | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 searched: Berlin
+[info]  EXECUTION TIME 0:00:01.479863 >> POST | 127.0.0.1:8000/
+[info]  EXECUTION TIME 2  0:00:01.480202 >> POST | 127.0.0.1:8000/
+[info] GET | 127.0.0.1:8000/second/ | text/plain | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+[info]  EXECUTION TIME 0:00:00.014351 >> GET | 127.0.0.1:8000/second/
+[info]  EXECUTION TIME 2  0:00:00.014570 >> GET | 127.0.0.1:8000/second/
