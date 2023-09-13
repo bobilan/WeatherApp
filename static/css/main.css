@@ -1,0 +1,10 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    min-height: calc(100% - 60px); /* 60px is the height of the footer */
+    padding-bottom: 60px; /* Equal to the height of the footer */
+}
