@@ -17,10 +17,8 @@ def simple_logging_middleware(get_response):
 
         if request.POST:
             post_data = request.POST
-            msg = f"{http_method} | {host_port}{url} | {content_type} | {user_agent} searched: {post_data['search_bar']}"
-        # post_data = request.get_post_data()
+            msg = f"{http_method} | {host_port}{url} | {content_type} | {user_agent}"
 
-        # msg = f"{http_method} | {host_port}{url} | {content_type} | {user_agent}"
         logging.info(msg)
 
         response = get_response(request)
