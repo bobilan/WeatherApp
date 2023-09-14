@@ -20,6 +20,7 @@ env/
 *.log
 
 logs/
+
 # Temporary files
 *.tmp
 

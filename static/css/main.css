@@ -1,10 +1,19 @@
-html, body {
-    height: 100%;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
-.content {
-    min-height: calc(100% - 60px); /* 60px is the height of the footer */
-    padding-bottom: 60px; /* Equal to the height of the footer */
+.site-content {
+    flex-grow: 1;
+}
+
+footer {
+    padding-top: 20px; /* Add padding to ensure space between content and footer */
+    background-color: #343a40; /* Adjust the background color as needed */
+    color: white; /* Adjust the text color as needed */
+    text-align: center;
+    position: sticky;
+    bottom: 0;
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>What's the weather like?</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    {% load custom_filters %}
+    {% load custom_filters %} <!-- If you have custom template filters -->
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-auto">
-                 <a href="/"> <!-- Replace 'index.html' with the actual URL of your index page -->
+                <a href="/"> <!-- Replace 'index.html' with the actual URL of your index page -->
                     <h3 class="text-dark">WeatherApp</h3>
                 </a>
             </div>
@@ -27,84 +27,88 @@
 
 
 <section class="vh-100" style="background-color: #87CEEB;">
+    <div class="container py-3 h-100">
 
-  <div class="container py-5 h-100">
 
-        <section class="py-4">
 
-        <div class="container">
-            <div class="row justify-content-center">
 
-                <div class="col-md-6">
-                    <form method="POST">
-<!--                        {% csrf_token %}-->
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Search again" name="city">
-                            <div class="input-group-append">
-                                <button class="btn btn-info" type="submit">
-                                    Search
-                                </button>
+        <section class="py-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form method="POST">
+                            <!-- {% csrf_token %} -->
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Search again" name="city">
+                                <div class="input-group-append">
+                                    <button class="btn btn-info" type="submit">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row d-flex justify-content-center align-items-center h-75">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="card" style="color: #4B515D; border-radius: 35px;">
+                    <div class="card-body p-4">
+                        <!-- Left Card Body -->
+                        <div class="d-flex">
+                            <h6 class="flex-grow-1">{{weather_data.city_name|uppercase}}</h6>
+                            <h6>{{weather_data.country}}</h6>
+                        </div>
+
+                        <div class="d-flex flex-column text-center mt-5 mb-4">
+                            <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> {{weather_data.temperature|floatformat:'0'}}°C </h6>
+                            <span class="small" style="color: #868B94">{{weather_data.weather_main}}</span>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1" style="font-size: 1rem;">
+                                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.wind_speed|floatformat:'1'}} km/h
+                                    </span></div>
+                                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.humidity}}% </span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="https://openweathermap.org/img/wn/{{weather_data.weather_icon}}@2x.png" width="100px">
                             </div>
                         </div>
-                    </form>
+                        <!-- End Left Card Body -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
+            <!-- Right Card Body -->
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="card" style="color: #4B515D; border-radius: 35px;">
+                    <div class="card-body p-4">
+                        <!-- Header -->
+                        <h5 style="color: #1C2331;">You might consider wearing: </h5>
 
-    <div class="row d-flex justify-content-center align-items-center h-75">
-      <div class="col-md-8 col-lg-6 col-xl-4">
-        <div class="card" style="color: #4B515D; border-radius: 35px;">
-          <div class="card-body p-4">
-            <!-- Left Card Body -->
-            <div class="d-flex">
-              <h6 class="flex-grow-1">{{weather_data.city_name|uppercase}}</h6>
-              <h6>{{weather_data.country}}</h6>
-            </div>
-
-            <div class="d-flex flex-column text-center mt-5 mb-4">
-              <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> {{weather_data.temperature|floatformat:'0'}}°C </h6>
-              <span class="small" style="color: #868B94">{{weather_data.weather_main}}</span>
-            </div>
-
-            <div class="d-flex align-items-center">
-              <div class="flex-grow-1" style="font-size: 1rem;">
-                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.wind_speed|floatformat:'1'}} km/h
-                  </span></div>
-                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> {{weather_data.humidity}}% </span>
+                        <!-- Text Field -->
+                        <h6 style="color: #868B94;"><b>Clothing</b>: {{ clothing_data.clothing}}</h6>
+                        <h6 style="color: #868B94;"><b>Shoes:</b> {{ clothing_data.shoes}}</h6>
+                        <h6 style="color: #868B94;"><b>Accessories:</b> {{ clothing_data.accessories}}</h6>
+                    </div>
                 </div>
-              </div>
-              <div>
-                <img src="https://openweathermap.org/img/wn/{{weather_data.weather_icon}}@2x.png"
-                  width="100px">
-              </div>
             </div>
-            <!-- End Left Card Body -->
-          </div>
+            <!-- End Right Card Body -->
         </div>
-      </div>
-
-      <!-- Right Card Body -->
-      <div class="col-md-8 col-lg-6 col-xl-4">
-        <div class="card" style="color: #4B515D; border-radius: 35px;">
-          <div class="card-body p-4">
-            <!-- Header -->
-            <h5 style="color: #1C2331;">You might consider wearing: </h5>
-
-            <!-- Text Field -->
-            <h6 style="color: #868B94;"><b>Clothing</b>: {{ clothing_data.clothing}}</h6>
-            <h6 style="color: #868B94;"><b>Shoes:</b> {{ clothing_data.shoes}}</h6>
-            <h6 style="color: #868B94;"><b>Accessories:</b> {{ clothing_data.accessories}}</h6>
-
-          </div>
-        </div>
-      </div>
-      <!-- End Right Card Body -->
-
     </div>
-  </div>
 </section>
+
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="">WeatherApp</a>
+    </div>
+</footer>
 
 </body>
 </html>
+
