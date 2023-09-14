@@ -15,7 +15,7 @@ env = environ.Env()
 env.read_env(str(BASE_DIR / ".env"))
 
 
-def call_weather_api(city):
+def call_weather_api(city: str) -> dict:
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={env('API_KEY')}&units=metric"
 
     try:
@@ -44,7 +44,7 @@ def call_weather_api(city):
         return None
 
 
-def get_clothing_recommendation(weather_data):
+def get_clothing_recommendation(weather_data: dict) -> Optional[Dict[str, str]]:
     openai.api_key = env('OPENAI_KEY')
 
     prompt = f"""Given the weather data: {weather_data}, recommend suitable clothing in the following form (3 categories):
