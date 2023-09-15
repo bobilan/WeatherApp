@@ -33,7 +33,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apps.core.middleware.logging.simple_logging_middleware",
     "apps.core.middleware.logging.ViewExecutionTimeMiddleware",
-    "apps.core.middleware.logging.ViewExecutionTimeSecondMiddleware",
+    # "apps.core.middleware.logging.ViewExecutionTimeSecondMiddleware",
 
 ]
 
@@ -85,3 +85,35 @@ STATICFILES_DIRS = [str(BASE_DIR / "static")]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+LOGGING = {
+    "version": 1,
+    "loggers": {"logging_mw": {
+        "handlers": ['file'],
+        "level": "DEBUG",
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "filters": ["only_if_debug_true"]
+        },
+        "file": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": str(BASE_DIR / 'logs' / 'req_res_logs.txt'),
+            "formatter": "verbose",
+        }
+    },
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} :: {message}",
+            "style": "{",
+        }
+    },
+    "filters": {
+        "only_if_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue"
+        }
+    },
+}
