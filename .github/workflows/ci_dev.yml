@@ -23,7 +23,7 @@ jobs:
       DB_PASS: ${{ secrets.DB_PASSWORD }}
       DB_HOST: ${{ vars.DB_HOST }}
       DB_PORT: ${{ vars.DB_PORT }}
-      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }} 
 
     services:
       postgres_main:
@@ -32,7 +32,6 @@ jobs:
           POSTGRES_USER: ${{ secrets.DB_USER }}
           POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
           POSTGRES_DB: ${{ secrets.DB_NAME }}
-#          POSTGRES_HOST_AUTH_METHOD: trust
 
         ports:
           - 5432:5432
