@@ -19,7 +19,7 @@ env/
 # Logs
 *.log
 
-logs/
+logs/*.txt
 
 # Temporary files
 *.tmp
