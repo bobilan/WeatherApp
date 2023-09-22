@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+
 class TestBasicCalculations(TestCase):
     def test_basic_sum(self):
         x = 1
@@ -7,6 +8,5 @@ class TestBasicCalculations(TestCase):
 
         result = x + y
 
-        self.assertEqual(result, 5)
-        
-        
+        assert result == 5
+
