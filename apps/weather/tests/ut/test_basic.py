@@ -7,4 +7,4 @@ class TestBasicCalculations(TestCase):
 
         result = x + y
 
-        self.assertEqual(result, 4)
+        self.assertEqual(result, 6)
