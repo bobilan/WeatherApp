@@ -17,7 +17,7 @@ class WeatherViewTest(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'weather/index.html')
-    #
+
     def test_weather_view_POST(self):
         form_data = {'search_bar': 'New York'}
         response = self.client.post(
@@ -28,5 +28,3 @@ class WeatherViewTest(TestCase):
         )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('second_view'))
-
-
