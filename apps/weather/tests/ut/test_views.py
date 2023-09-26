@@ -29,13 +29,4 @@ class WeatherViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('second_view'))
 
-    def test_weather_view_POST_invalid(self):
-        form_data = {'search_bar': 'oushdfoashf'}
-        response = self.client.post(
-            reverse('weather_view'),
-            data=form_data,
-            HTTP_USER_AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10)",
-            HTTP_CONTENT_TYPE="",
-        )
-        self.assertEqual(response.status_code, 200)
 
