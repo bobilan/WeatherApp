@@ -24,6 +24,9 @@ jobs:
       DB_HOST: ${{ vars.DB_HOST }}
       DB_PORT: ${{ vars.DB_PORT }}
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+      API_KEY: ${{ secrets.API_KEY }}
+
 
     services:
       postgres_main:
