@@ -1,4 +1,3 @@
-from typing import Optional
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
@@ -60,7 +59,6 @@ def user_login_view(request):
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            print(username)
             user = authenticate(
                 username=username,
                 password=password,
