@@ -72,7 +72,7 @@ pip install -r requirements/base.txt -r requirements/prod.txt
 
 4. Configure your production database settings.
 
-5. Set up a production-ready web server .
+5. Set up a production-ready web server.
 
 6. Deploy your app to the production server and set up any necessary server configurations.
 
