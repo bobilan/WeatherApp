@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:12
+    container_name: weatherapp_postgres
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U Bo -d weatherapp" ]
+      interval: 10s
+      retries: 4
+
+  django:
+    container_name: weatherapp_django
+    build:
+      context: .
+    command: python manage.py runserver --settings=config.settings.dev 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    environment:
+      - DOCKER_CONTAINER=1 # Set variable for ability to pass HOST for Docker and locally
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

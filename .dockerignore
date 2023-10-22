@@ -1,0 +1,33 @@
+# Ignore version control system directories
+.git
+.svn
+.hg
+
+# Ignore Python bytecode files and caches
+__pycache__
+*.pyc
+
+# Ignore virtual environment directory (if using virtualenv)
+venv
+
+# Ignore database files (if not using an external database)
+db.sqlite3
+
+# Ignore Docker-related files and directories
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Ignore IDE and editor files
+.idea
+.vscode
+*.swp
+
+# Ignore log files
+*.log
+
+# Ignore local settings (include only necessary settings)
+.env
+
+# Ignore development-related and test data
+test_data/
